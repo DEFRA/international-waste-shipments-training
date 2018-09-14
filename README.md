@@ -1,7 +1,7 @@
 # International Waste Shipments Training
 
 This repository is a wrapper for a number of repositories that form a Node.js
-based solution for [International Waste Shipments service](https://github.com/DEFRA/prsd-iws).
+based solution for the [International Waste Shipments service](https://github.com/DEFRA/prsd-iws).
 This solution exists for training purposes.
 
 ## Contributing to this project
