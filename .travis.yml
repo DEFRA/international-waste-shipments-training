@@ -9,7 +9,7 @@ git:
   depth: 3
 
 before_script:
-  - npm install markdownlint-cli --ignore node_modules
+  - npm install markdownlint-cli
 
 script:
-  - markdownlint $PWD 
+  - markdownlint $PWD --ignore node_modules
