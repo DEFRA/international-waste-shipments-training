@@ -1,6 +1,9 @@
 # International Waste Shipments Training
 
-[![Build Status](https://travis-ci.com/DEFRA/international-waste-shipments-training.svg?branch=master)](https://travis-ci.com/DEFRA/international-waste-shipments-training)
+| Branch  | Travis CI |
+| ------------- | ------------- |
+| master  | [![Build Status](https://travis-ci.com/DEFRA/international-waste-shipments-training.svg?branch=master)](https://travis-ci.com/DEFRA/international-waste-shipments-training)  |
+| develop | [![Build Status](https://travis-ci.com/DEFRA/international-waste-shipments-training.svg?branch=develop)](https://travis-ci.com/DEFRA/international-waste-shipments-training)  |
 
 This repository is a wrapper for a number of repositories that form a Node.js
 based solution for the [International Waste Shipments service](https://github.com/DEFRA/prsd-iws).
