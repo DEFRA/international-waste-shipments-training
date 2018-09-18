@@ -12,8 +12,4 @@ before_script:
   - npm install markdownlint-cli
 
 script:
-  - markdownlint $PWD
-
-branches:
-  only:
-    - master
+  - markdownlint $PWD --ignore node_modules
