@@ -1,15 +1,23 @@
-language: node_js
+matrix:
+  include:
+    - language: java
 
-node_js:
-  - "8"
+      jdk: oraclejdk8
 
-sudo: false
+      sudo: false
 
-git:
-  depth: 3
+      script:
+        - mvn --version
 
-before_script:
-  - npm install markdownlint-cli
+    - language: node_js
 
-script:
-  - markdownlint $PWD --ignore node_modules
+      node_js:
+        - "8"
+
+      sudo: false
+
+      before_script:
+        - npm install markdownlint-cli
+
+      script:
+        - markdownlint $PWD --ignore node_modules
