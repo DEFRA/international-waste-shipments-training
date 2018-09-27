@@ -19,3 +19,6 @@ ___*
 
 .idea
 .vscode
+
+# Maven output
+**/target

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>uk.gov.defra.international-waste-shipments-training</groupId>
+    <artifactId>International-Waste-Shipments-Training-Database</artifactId>
+    <packaging>jar</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>International-Waste-Shipments-Training-Database</name>
+    <url>https://github.com/DEFRA/international-waste-shipments-training</url>
+
+    <properties>
+        <liquibase.version>3.6.2</liquibase.version>
+        <postgresql.version>42.2.5.jre7</postgresql.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.liquibase</groupId>
+            <artifactId>liquibase-core</artifactId>
+            <version>${liquibase.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>${postgresql.version}</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.liquibase</groupId>
+                <artifactId>liquibase-maven-plugin</artifactId>
+                <version>${liquibase.version}</version>
+                <configuration>
+                    <changeLogFile>src/main/resources/changelog/db.changelog-master.xml</changeLogFile>
+                    <driver>org.postgresql.Driver</driver>
+                    <username>${IWS_POSTGRES_IWS_USER}</username>
+                    <password>${IWS_POSTGRES_IWS_PASSWORD}</password>
+                    <url>${IWS_POSTGRES_CONNECTION_STRING}</url>
+                    <systemProperties>
+                    	<iwsPostgresIndexesTablespace>${IWS_POSTGRES_INDEXES_TABLESPACE}</iwsPostgresIndexesTablespace>
+                        <iwsPostgresSchema>${IWS_POSTGRES_IWS_SCHEMA}</iwsPostgresSchema>
+                        <iwsPostgresTablesTablespace>${IWS_POSTGRES_TABLES_TABLESPACE}</iwsPostgresTablesTablespace>
+                    </systemProperties>    
+                    <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>update</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
