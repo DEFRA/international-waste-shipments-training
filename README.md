@@ -39,12 +39,14 @@ If using Docker
 | IWS_POSTGRES_IWS_PASSWORD                      | Password for iws database user                        | yes      |         |             |
 | IWS_POSTGRES_IWS_SCHEMA                        | iws database schema name                              | yes      |         |             |
 | IWS_POSTGRES_IWS_USER                          | Username for iws database user                        | yes      |         |             |
+| IWS_POSTGRES_CONTAINER_PORT                    | Database Docker port                                  | no       |  5432   |             |
+| IWS_POSTGRES_HOST_PORT                         | Database port                                         | no       |  5432   |             |
 
 ## Local Linux Host Based Docker Build
 
 * Ensure the required environment variables are set.
 * Run ./bootstrap.sh from  the directory containing this file. This creates a Postgres 9.4 database called **iws** running in a Docker container. The
-  database contains a basic schema and reference data. At present, data is not persisted between container restarts.
+  database contains a basic schema and reference data. Volumes are not used at present.
 
 ## Contributing to this project
 

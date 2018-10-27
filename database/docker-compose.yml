@@ -16,9 +16,9 @@ services:
       - IWS_POSTGRES_IWS_USER
       - POSTGRES_PASSWORD=${IWS_POSTGRES_PASSWORD}
     ports:
-      - "5432:5432"
+      - "${IWS_POSTGRES_HOST_PORT:-5432}:${IWS_POSTGRES_CONTAINER_PORT:-5432}"
     networks:
-      - docker_database
+      - iws_docker
 networks:
-  docker_database:
+  iws_docker:
     driver: bridge
