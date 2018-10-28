@@ -35,15 +35,12 @@
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>${liquibase.version}</version>
                 <configuration>
+                    <propertyFile>config.env</propertyFile>>
                     <changeLogFile>src/main/resources/changelog/db.changelog-master.xml</changeLogFile>
-                    <driver>org.postgresql.Driver</driver>
-                    <username>${IWS_POSTGRES_IWS_USER}</username>
-                    <password>${IWS_POSTGRES_IWS_PASSWORD}</password>
-                    <url>${IWS_POSTGRES_CONNECTION_STRING}</url>
                     <systemProperties>
-                    	<iwsPostgresIndexesTablespace>${IWS_POSTGRES_INDEXES_TABLESPACE}</iwsPostgresIndexesTablespace>
-                        <iwsPostgresSchema>${IWS_POSTGRES_IWS_SCHEMA}</iwsPostgresSchema>
-                        <iwsPostgresTablesTablespace>${IWS_POSTGRES_TABLES_TABLESPACE}</iwsPostgresTablesTablespace>
+                    	<iwsPostgresIndexesTablespace>iws_tables</iwsPostgresIndexesTablespace>
+                        <iwsPostgresSchema>u_iws</iwsPostgresSchema>
+                        <iwsPostgresTablesTablespace>iws_tables</iwsPostgresTablesTablespace>
                     </systemProperties>    
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                 </configuration>

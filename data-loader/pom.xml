@@ -28,23 +28,32 @@
             <version>${postgresql.version}</version>
         </dependency>
     </dependencies>
+
     <build>
+     <resources>
+                    <resource>
+<directory>src/main/resources</directory>
+<filtering>true</filtering>
+</resource>
+<resource>
+<directory>src/main/resources</directory>
+</resource>
+</resources>
         <plugins>
             <plugin>
                 <groupId>org.liquibase</groupId>
                 <artifactId>liquibase-maven-plugin</artifactId>
                 <version>${liquibase.version}</version>
                 <configuration>
+                <propertyFileWillOverride>true</propertyFileWillOverride>
+                    <propertyFile>../database/config.env</propertyFile>>
                     <changeLogFile>src/main/resources/changelog/db.changelog-master.xml</changeLogFile>
-                    <driver>org.postgresql.Driver</driver>
-                    <username>${IWS_POSTGRES_IWS_USER}</username>
-                    <password>${IWS_POSTGRES_IWS_PASSWORD}</password>
-                    <url>${IWS_POSTGRES_CONNECTION_STRING}</url>
-                    <systemProperties>
+                     <systemProperties>
                         <iwsPostgresSchema>${IWS_POSTGRES_IWS_SCHEMA}</iwsPostgresSchema>
-                    </systemProperties>    
+                    </systemProperties>
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                 </configuration>
+                   
                 <executions>
                     <execution>
                         <phase>process-resources</phase>

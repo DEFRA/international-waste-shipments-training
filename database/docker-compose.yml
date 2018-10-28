@@ -1,24 +1,18 @@
-version: '3.7'
+version: '2.0'
 services:
   international-waste-shipments-training-database:
     build:
       context: .
       dockerfile: Dockerfile
     container_name: "international-waste-shipments-training-database"
-    environment:
-      - IWS_POSTGRES_CREATE_TABLESPACE_DIRECTORIES
-      - IWS_POSTGRES_INDEXES_TABLESPACE
-      - IWS_POSTGRES_INDEXES_TABLESPACE_LOCATION
-      - IWS_POSTGRES_TABLES_TABLESPACE
-      - IWS_POSTGRES_TABLES_TABLESPACE_LOCATION
-      - IWS_POSTGRES_IWS_PASSWORD
-      - IWS_POSTGRES_IWS_SCHEMA
-      - IWS_POSTGRES_IWS_USER
-      - POSTGRES_PASSWORD=${IWS_POSTGRES_PASSWORD}
+    env_file: config.env
     ports:
       - "5432:5432"
+    
+    user: postgres
     networks:
       - docker_database
+    
 networks:
   docker_database:
     driver: bridge
