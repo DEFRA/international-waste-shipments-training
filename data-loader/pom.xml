@@ -49,7 +49,7 @@
                     <propertyFile>../database/config.env</propertyFile>>
                     <changeLogFile>src/main/resources/changelog/db.changelog-master.xml</changeLogFile>
                      <systemProperties>
-                        <iwsPostgresSchema>${IWS_POSTGRES_IWS_SCHEMA}</iwsPostgresSchema>
+                        <iwsPostgresSchema>u_iws</iwsPostgresSchema>
                     </systemProperties>
                     <promptOnNonLocalDatabase>false</promptOnNonLocalDatabase>
                 </configuration>
