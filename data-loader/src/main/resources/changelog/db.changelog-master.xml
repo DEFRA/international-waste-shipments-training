@@ -6,4 +6,5 @@
                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
 
   <include file="./changelog/db.changelog-u-iws-initial-data.xml"/> 
+  <include file="./changelog/db.changelog-u-iws-0-0-1-data.xml"/> 
 </databaseChangeLog> 
