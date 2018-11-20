@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<databaseChangeLog 
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd"> 
+  <changeSet author="pshaw" id="changelog-u-iws-initial-structure">
+	<sqlFile path="./scripts/u-iws-initial-structure/u-iws-initial-structure.sql" splitStatements="false"/>
+	<rollback>
+		<sqlFile path="./scripts/u-iws-initial-structure/u-iws-initial-structure-rollback.sql" splitStatements="false"/>
+	</rollback>
+  </changeSet>
+</databaseChangeLog> 
