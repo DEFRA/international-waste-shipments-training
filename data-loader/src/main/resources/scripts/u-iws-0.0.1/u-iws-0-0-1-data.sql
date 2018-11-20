@@ -1,5 +1,3 @@
-set schema 'u_iws';
-
 INSERT INTO ${iwsPostgresSchema}.lookup_chemicalcompositioncategory (id, description) VALUES (0, N'Other');
 INSERT INTO ${iwsPostgresSchema}.lookup_chemicalcompositioncategory (id, description) VALUES (1, N'Paper');
 INSERT INTO ${iwsPostgresSchema}.lookup_chemicalcompositioncategory (id, description) VALUES (2, N'Plastics');
@@ -5117,5 +5115,3 @@ INSERT INTO ${iwsPostgresSchema}.lookup_bankholiday (id, date, competentauthorit
 INSERT INTO ${iwsPostgresSchema}.lookup_bankholiday (id, date, competentauthority, createddate) VALUES (N'f5e72c7c-e2bf-e711-8253-2816ad4612a1', CAST(N'2018-08-27T00:00:00.0000000' AS TIMESTAMP), 4, CAST(N'2017-11-02T15:28:41.0000000' AS TIMESTAMP));
 INSERT INTO ${iwsPostgresSchema}.lookup_bankholiday (id, date, competentauthority, createddate) VALUES (N'f6e72c7c-e2bf-e711-8253-2816ad4612a1', CAST(N'2018-12-25T00:00:00.0000000' AS TIMESTAMP), 4, CAST(N'2017-11-02T15:28:41.0000000' AS TIMESTAMP));
 INSERT INTO ${iwsPostgresSchema}.lookup_bankholiday (id, date, competentauthority, createddate) VALUES (N'f7e72c7c-e2bf-e711-8253-2816ad4612a1', CAST(N'2018-12-26T00:00:00.0000000' AS TIMESTAMP), 4, CAST(N'2017-11-02T15:28:41.0000000' AS TIMESTAMP));
-INSERT INTO ${iwsPostgresSchema}.notification_organisation(id, name, type, rowversion, registrationnumber, aditionalregistrationnumber, fullname, telephone, fax, email, otherdescription) VALUES ('5BA4CE98-58E9-4E44-A44D-A95B008C25BB', 'Dev Organisation', 2, '1', '123456', null, 'Development Organisation', '01925123123', '01925231231', 'dev@iws.gov.uk', null);
-INSERT INTO ${iwsPostgresSchema}.identity_users(id, email, emailconfirmed, passwordhash, securitystamp, phonenumber, phonenumberconfirmed, twofactorenabled, lockoutenddateutc, lockoutenabled, accessfailedcount, username, firstname, surname, organisationid, addressid) VALUES ('3701253e-0180-4fee-86cd-7847640af3be', 'dev@iws.gov.uk', true, '$2b$10$b/gB1ALSbgfbKUpBdQOzOuQ.5Xy6fkSQ8q3Ko1ieGoaPN3KMI.bea', '', '01925123123', false, false, null, true, 0, 'dev@iws.gov.uk', 'developer', 'iws', '5BA4CE98-58E9-4E44-A44D-A95B008C25BB', '');

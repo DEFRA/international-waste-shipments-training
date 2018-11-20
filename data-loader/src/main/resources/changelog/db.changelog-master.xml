@@ -7,4 +7,5 @@
 
   <include file="./changelog/db.changelog-u-iws-initial-data.xml"/> 
   <include file="./changelog/db.changelog-u-iws-0-0-1-data.xml"/> 
+  <include file="./changelog/db.changelog-u-iws-0-0-2-data.xml"/> 
 </databaseChangeLog> 
